@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PRO REO Law Strafrecht - Rechtsanwälte Essen</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,700&family=DM+Sans:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #1A1A1A;
+            --secondary-color: #FAFAFA;
+            --background-light: #FFFFFF;
+            --background-dark: #F5F5F5;
+            --accent-color: #C8A97E;
+            --font-heading: 'Cormorant Garamond', serif;
+            --font-body: 'DM Sans', sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            color: var(--primary-color);
+            background-color: var(--secondary-color);
+            margin: 0;
+            padding: 0;
+            line-height: 1.6;
+            scroll-behavior: smooth;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-style: italic;
+            color: var(--primary-color);
+        }
+
+        p {
+            font-family: var(--font-body);
+            font-weight: 400;
+        }
+
+        a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            padding: 20px 0;
+            background-color: rgba(255, 255, 255, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            transition: background-color 0.3s ease;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        nav.scrolled {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+        }
+
+        nav .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-family: var(--font-heading);
+            font-weight: 700;
+            font-style: italic;
+            font-size: 24px;
+            color: var(--primary-color);
+        }
+
+        .nav-links {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+        }
+
+        .nav-links li {
+            margin-left: 30px;
+        }
+
+        .nav-links a {
+            font-family: var(--font-body);
+            font-weight: 700;
+            color: var(--primary-color);
+            text-transform: uppercase;
+            font-size: 14px;
+            transition: color 0.3s ease;
+        }
+
+        .nav-links a:hover {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+
+        .cta-button {
+            background-color: var(--accent-color);
+            color: var(--background-light);
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            transition: background-color 0.3s ease;
+        }
+
+        .cta-button:hover {
+            background-color: #b39267;
+            text-decoration: none;
+            color: var(--background-light);
+        }
+
+        /* Hero Section */
+        #hero {
+            background-color: var(--background-light);
+            padding: 120px 0 80px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+            min-height: 70vh; /* Ensure it takes up significant height */
+        }
+
+        #hero .hero-content {
+            width: 55%;
+            padding-right: 40px;
+            box-sizing: border-box;
+        }
+
+        #hero .hero-image {
+            width: 45%;
+            box-sizing: border-box;
+            display: flex;
+            justify-content: flex-end; /* Align image to the right */
+        }
+
+        #hero h1 {
+            font-size: 56px;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+
+        #hero p {
+            font-size: 20px;
+            margin-bottom: 40px;
+            color: var(--primary-color);
+        }
+
+        .hero-cta-buttons {
+            display: flex;
+            gap: 20px;
+        }
+
+        .hero-cta-buttons a {
+            padding: 15px 30px;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            transition: all 0.3s ease;
+        }
+
+        .hero-cta-buttons .primary {
+            background-color: var(--accent-color);
+            color: var(--background-light);
+        }
+
+        .hero-cta-buttons .primary:hover {
+            background-color: #b39267;
+            color: var(--background-light);
+        }
+
+        .hero-cta-buttons .secondary {
+            background-color: transparent;
+            color: var(--primary-color);
+            border: 2px solid var(--primary-color);
+        }
+
+        .hero-cta-buttons .secondary:hover {
+            background-color: var(--primary-color);
+            color: var(--background-light);
+        }
+
+        #hero .hero-stats {
+            background-color: var(--background-dark);
+            padding: 30px 0;
+            margin-top: 60px;
+            width: 100%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            border-top: 1px solid rgba(0, 0, 0, 0.1);
+        }
+
+        #hero .stat-item {
+            text-align: center;
+        }
+
+        #hero .stat-number {
+            font-size: 36px;
+            font-weight: 700;
+            font-family: var(--font-body);
+            color: var(--accent-color);
+            margin-bottom: 5px;
+        }
+
+        #hero .stat-label {
+            font-size: 16px;
+            color: var(--primary-color);
+            font-weight: 700;
+            font-family: var(--font-body);
+        }
+
+        /* Section Styling */
+        section {
+            padding: 80px 0;
+        }
+
+        section:nth-child(even) {
+            background-color: var(--background-dark);
+        }
+
+        section:nth-child(odd) {
+            background-color: var(--background-light);
+        }
+
+        section h2 {
+            font-size: 48px;
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        /* Services Section */
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .service-card {
+            background-color: var(--background-light);
+            padding: 40px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .service-card svg {
+            width: 60px;
+            height: 60px;
+            margin-bottom: 25px;
+            fill: var(--accent-color);
+        }
+
+        .service-card h3 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        .service-card p {
+            font-size: 16px;
+            color: var(--primary-color);
+        }
+
+        /* Quote Section */
+        #quote {
+            background-color: var(--accent-color);
+            color: var(--background-light);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        #quote::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 1px;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.3);
+        }
+
+        #quote p {
+            font-size: 32px;
+            font-style: italic;
+            font-weight: 700;
+            line-height: 1.4;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        #quote .quote-author {
+            font-size: 18px;
+            font-weight: 400;
+            margin-top: 20px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        /* About Section */
+        #about {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        #about .about-image {
+            width: 45%;
+            box-sizing: border-box;
+        }
+
+        #about .about-content {
+            width: 55%;
+            box-sizing: border-box;
+            padding-left: 40px;
+        }
+
+        #about h2 {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        #about h3 {
+            font-size: 32px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        #about p {
+            font-size: 18px;
+            margin-bottom: 20px;
+        }
+
+        /* Contact Section */
+        #contact {
+            padding: 80px 0;
+            background-color: var(--background-light); /* Override section default */
+        }
+
+        #contact .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            flex-wrap: wrap;
+            gap: 40px;
+        }
+
+        #contact .contact-form,
+        #contact .contact-map {
+            width: 48%;
+            box-sizing: border-box;
+        }
+
+        #contact h2 {
+            text-align: left;
+            margin-bottom: 30px;
+        }
+
+        .contact-form input[type="text"],
+        .contact-form input[type="email"],
+        .contact-form textarea {
+            width: 100%;
+            padding: 15px;
+            margin-bottom: 20px;
+            border: 1px solid #E0E0E0;
+            border-radius: 5px;
+            font-family: var(--font-body);
+            font-size: 16px;
+            box-sizing: border-box;
+        }
+
+        .contact-form textarea {
+            min-height: 150px;
+            resize: vertical;
+        }
+
+        .contact-form button {
+            background-color: var(--accent-color);
+            color: var(--background-light);
+            padding: 15px 30px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .contact-form button:hover {
+            background-color: #b39267;
+        }
+
+        .contact-map iframe {
+            width: 100%;
+            height: 450px;
+            border: 0;
+            border-radius: 8px;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--primary-color);
+            color: var(--background-light);
+            padding: 60px 0 20px 0;
+        }
+
+        footer .container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        footer .footer-col {
+            display: flex;
+            flex-direction: column;
+        }
+
+        footer .logo {
+            color: var(--background-light);
+            font-size: 28px;
+            margin-bottom: 15px;
+        }
+
+        footer .tagline {
+            font-size: 16px;
+            color: rgba(255, 255, 255, 0.7);
+            font-weight: 400;
+        }
+
+        footer h3 {
+            color: var(--background-light);
+            font-size: 20px;
+            margin-bottom: 20px;
+            font-style: italic;
+        }
+
+        footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        footer li {
+            margin-bottom: 10px;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+            transition: color 0.3s ease;
+        }
+
+        footer a:hover {
+            color: var(--accent-color);
+        }
+
+        .contact-info p {
+            margin-bottom: 10px;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+        }
+
+        .contact-info a {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 16px;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 30px;
+            margin-top: 40px;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.6);
+        }
+
+        /* Cookie Banner */
+        .cookie-banner {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background-color: var(--primary-color);
+            color: var(--background-light);
+            padding: 20px 0;
+            text-align: center;
+            z-index: 1001;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.1);
+            transform: translateY(100%); /* Hidden by default */
+            transition: transform 0.3s ease-out;
+        }
+
+        .cookie-banner.visible {
+            transform: translateY(0);
+        }
+
+        .cookie-banner p {
+            margin: 0;
+            font-size: 14px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .cookie-banner a {
+            color: var(--accent-color);
+            font-weight: 700;
+        }
+
+        .cookie-banner button {
+            background-color: var(--accent-color);
+            color: var(--background-light);
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            font-weight: 700;
+            font-size: 14px;
+            text-transform: uppercase;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .cookie-banner button:hover {
+            background-color: #b39267;
+        }
+
+        /* Mobile Styles */
+        @media (max-width: 992px) {
+            nav .container {
+                padding: 0 20px;
+            }
+
+            .nav-links {
+                display: none; /* Hide desktop links */
+                flex-direction: column;
+                position: absolute;
+                top: 70px; /* Adjust based on nav height */
+                left: 0;
+                width: 100%;
+                background-color: rgba(255, 255, 255, 0.95);
+                backdrop-filter: blur(10px);
+                padding: 20px 0;
+                box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+            }
+
+            .nav-links.open {
+                display: flex;
+            }
+
+            .nav-links li {
+                margin: 15px 0;
+                text-align: center;
+            }
+
+            .nav-links a {
+                font-size: 16px;
+            }
+
+            .cta-button {
+                margin-left: 15px;
+            }
+
+            .hamburger {
+                display: block;
+                cursor: pointer;
+                font-size: 24px;
+                color: var(--primary-color);
+            }
+
+            #hero {
+                flex-direction: column;
+                padding: 80px 0 40px 0;
+            }
+
+            #hero .hero-content,
+            #hero .hero-image {
+                width: 100%;
+                padding-right: 0;
+                text-align: center;
+            }
+
+            #hero .hero-image {
+                margin-top: 40px;
+            }
+
+            #hero h1 {
+                font-size: 40px;
+            }
+
+            #hero p {
+                font-size: 18px;
+            }
+
+            .hero-cta-buttons {
+                justify-content: center;
+            }
+
+            #hero .hero-stats {
+                flex-direction: column;
+                gap: 20px;
+            }
+
+            section {
+                padding: 60px 0;
+            }
+
+            section h2 {
+                font-size: 36px;
+                margin-bottom: 40px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            #quote p {
+                font-size: 24px;
+            }
+
+            #about {
+                flex-direction: column;
+            }
+
+            #about .about-image,
+            #about .about-content {
+                width: 100%;
+                padding-left: 0;
+            }
+
+            #about .about-image {
+                margin-bottom: 30px;
+            }
+
+            #about h2 {
+                text-align: center;
+            }
+
+            #contact .container {
+                flex-direction: column;
+            }
+
+            #contact .contact-form,
+            #contact .contact-map {
+                width: 100%;
+            }
+
+            footer .container {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            footer .footer-col {
+                margin-bottom: 30px;
+            }
+
+            .cookie-banner {
+                flex-direction: column;
+                padding: 15px;
+            }
+
+            .cookie-banner p {
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="container">
+            <div class="logo">PRO REO Law</div>
+            <ul class="nav-links">
+                <li><a href="#services">Leistungen</a></li>
+                <li><a href="#about">Über uns</a></li>
+                <li><a href="#contact">Kontakt</a></li>
+            </ul>
+            <a href="#contact" class="cta-button">Beratungstermin</a>
+            <div class="hamburger">&#9776;</div>
+        </div>
+    </nav>
+
+    <header id="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Ihr Recht. Unsere Expertise.</h1>
+                <p>Wir verteidigen Ihre Interessen mit höchster Sorgfalt und juristischer Brillanz im Strafrecht in Essen und darüber hinaus.</p>
+                <div class="hero-cta-buttons">
+                    <a href="#contact" class="primary">Jetzt Beratung anfordern</a>
+                    <a href="tel:020181179607" class="secondary">0201 81179607</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-qWwpHwip31M?w=800&h=600&fit=crop&q=80&auto=format" alt="Anwaltische Vertretung">
+            </div>
+            <div class="hero-stats">
+                <div class="stat-item">
+                    <div class="stat-number">15+</div>
+                    <div class="stat-label">Jahre Erfahrung</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Erfolgreiche Fälle</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">5.0</div>
+                    <div class="stat-label">Google Bewertung (86 Rezensionen)</div>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <section id="services">
+        <div class="container">
+            <h2>Unsere Kernkompetenzen</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                    </svg>
+                    <h3>Strafverteidigung</h3>
+                    <p>Umfassende juristische Unterstützung in allen Phasen eines Strafverfahrens, von der Ermittlung bis zur Hauptverhandlung.</p>
+                </div>
+                <div class="service-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 17.27 4 12 12 3 20 12 12 17.27zm0-4.58 4.96-3.53-4.96-3.53-4.96 3.53 4.96 3.53zm-4.64 3.74 3.64 2.56v-2.56h-3.64zm9.28 0h-3.64v2.56l3.64-2.56z"/>
+                    </svg>
+                    <h3>Ermittlungsverfahren</h3>
+                    <p>Wir setzen uns frühzeitig für Ihre Rechte ein und gestalten die Kommunikation mit den Ermittlungsbehörden professionell.</p>
+                </div>
+                <div class="service-card">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-4.41 0-8-3.59-8-8s3.59-8 8-8 8 3.59 8 8-3.59 8-8 8zm-1-13h2v6h-2zm0 8h2v2h-2z"/>
+                    </svg>
+                    <h3>Berufung & Revision</h3>
+                    <p>Komplexe juristische Überprüfung von Urteilen und fundierte Anträge zur Abänderung.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="quote">
+        <div class="container">
+            <p>"Die Kanzlei PRO REO Law hat mich in einer äußerst schwierigen Zeit hervorragend vertreten. Ich fühlte mich jederzeit bestens informiert und sicher."</p>
+            <div class="quote-author">— Ein zufriedener Mandant</div>
+        </div>
+    </section>
+
+    <section id="about">
+        <div class="container">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-5fNmWej4tAA?w=800&h=600&fit=crop&q=80&auto=format" alt="Kanzleiräume">
+            </div>
+            <div class="about-content">
+                <h2>Über uns: Ihre Anwälte in Essen</h2>
+                <h3>Für Ihre Rechte kämpfen wir.</h3>
+                <p>PRO REO Law Strafrecht – Rechtsanwälte und Fachanwälte Dr. Manon Heindorf & Prof. Dr. Jens M. Schmittmann steht für kompromisslose juristische Vertretung im Strafrecht. Mit tiefgreifender Expertise und einem unerschütterlichen Engagement für unsere Mandanten setzen wir uns für Gerechtigkeit ein. Seit unserer Gründung in Essen begleiten wir Menschen durch die komplexen Herausforderungen des Strafrechts.</p>
+                <p>Unsere Kanzlei vereint langjährige Erfahrung mit modernster juristischer Strategie. Wir sind Ihr starker Partner, wenn es um Ihre Freiheit und Ihre Zukunft geht.</p>
+                <a href="#contact" class="cta-button">Beratungsgespräch vereinbaren</a>
+            </div>
+        </div>
+    </section>
+
+    <section id="gallery">
+        <div class="container">
+            <h2>Impressionen</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-eMP4sYPJ9x0?w=1200&h=800&fit=crop&q=80&auto=format" alt="Büroansicht 1" style="width: 100%; border-radius: 8px;">
+                </div>
+                <div class="service-card">
+                    <img src="https://images.unsplash.com/photo-hpjSkU2UYSU?w=1200&h=800&fit=crop&q=80&auto=format" alt="Büroansicht 2" style="width: 100%; border-radius: 8px;">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact">
+        <div class="container">
+            <div class="contact-form">
+                <h2>Kontakt aufnehmen</h2>
+                <p>Haben Sie Fragen oder benötigen Sie dringend juristische Hilfe? Nutzen Sie unser Formular oder rufen Sie uns direkt an.</p>
+                <form id="contactForm">
+                    <input type="text" name="name" placeholder="Ihr Name" required>
+                    <input type="email" name="email" placeholder="Ihre E-Mail-Adresse" required>
+                    <textarea name="message" placeholder="Ihre Nachricht" required></textarea>
+                    <button type="submit">Nachricht senden</button>
+                </form>
+            </div>
+            <div class="contact-map">
+                <h2>Finden Sie uns</h2>
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2515.871685110741!2d6.768804311975035!3d51.47348879413087!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47b9c63f16b191a7%3A0x6e6d7f1b7b3a4a3b!2sPRO%20REO%20Law%20Strafrecht%20-%20Rechtsanwälte%20und%20Fachanwälte!5e0!3m2!1sde!2sde!4v1678886400000!5m2!1sde!2sde" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-col">
+                <div class="logo">PRO REO Law</div>
+                <div class="tagline">Ihr starker Partner im Strafrecht.</div>
+            </div>
+            <div class="footer-col">
+                <h3>Navigation</h3>
+                <ul>
+                    <li><a href="#hero">Startseite</a></li>
+                    <li><a href="#services">Leistungen</a></li>
+                    <li><a href="#about">Über uns</a></li>
+                    <li><a href="#contact">Kontakt</a></li>
+                </ul>
+            </div>
+            <div class="footer-col contact-info">
+                <h3>Kontakt</h3>
+                <p>PRO REO Law Strafrecht</p>
+                <p>Rechtsanwälte und Fachanwälte</p>
+                <p>Dr. Manon Heindorf & Prof. Dr. Jens M. Schmittmann</p>
+                <p>Musterstraße 123, 45127 Essen</p>
+                <p><a href="tel:020181179607">Telefon: 0201 81179607</a></p>
+                <p><a href="mailto:info@proreolaw.de">E-Mail: info@proreolaw.de</a></p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2023 PRO REO Law. Alle Rechte vorbehalten. | <a href="#">Datenschutz</a> | <a href="#">Impressum</a>
+        </div>
+    </footer>
+
+    <div id="cookieBanner" class="cookie-banner">
+        <p>Diese Website verwendet Cookies, um Ihnen das beste Erlebnis zu bieten. Durch die weitere Nutzung stimmen Sie unserer <a href="#">Cookie-Richtlinie</a> zu.</p>
+        <button id="acceptCookie">Akzeptieren</button>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const nav = document.querySelector('nav');
+            const hamburger = document.querySelector('.hamburger');
+            const navLinks = document.querySelector('.nav-links');
+            const cookieBanner = document.getElementById('cookieBanner');
+            const acceptCookieButton = document.getElementById('acceptCookie');
+
+            // Navbar scroll effect
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    nav.classList.add('scrolled');
+                } else {
+                    nav.classList.remove('scrolled');
+                }
+            });
+
+            // Mobile menu toggle
+            hamburger.addEventListener('click', () => {
+                navLinks.classList.toggle('open');
+            });
+
+            // Close mobile menu when a link is clicked
+            navLinks.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', () => {
+                    navLinks.classList.remove('open');
+                });
+            });
+
+            // Cookie banner
+            if (localStorage.getItem('cookieAccepted')) {
+                cookieBanner.style.display = 'none';
+            } else {
+                cookieBanner.classList.add('visible');
+            }
+
+            acceptCookieButton.addEventListener('click', () => {
+                localStorage.setItem('cookieAccepted', 'true');
+                cookieBanner.style.display = 'none';
+            });
+
+            // Smooth scroll for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    document.querySelector(this.getAttribute('href')).scrollIntoView({
+                        behavior: 'smooth'
+                    });
+                });
+            });
+
+            // Fade-in on scroll using IntersectionObserver
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.opacity = 1;
+                        entry.target.style.transform = 'translateY(0)';
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+
+            document.querySelectorAll('section, .service-card, .about-content, .contact-form, .contact-map, footer').forEach(element => {
+                element.style.opacity = 0;
+                element.style.transform = 'translateY(20px)';
+                element.style.transition = 'opacity 0.8s ease-out, transform 0.8s ease-out';
+                observer.observe(element);
+            });
+        });
+    </script>
+</body>
+</html>
